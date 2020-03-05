@@ -1,6 +1,7 @@
 package com.ezenity.types;
 
 import java.awt.*;
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -304,7 +305,33 @@ public class Main {
         System.out.println(numbersArrayNewSyntax.length); // Gives us the amount of elements/items in the array (Array Length)
         Arrays.sort(numbersArrayNewSyntax); // Sort the elements/items in the Array
         System.out.println(Arrays.toString(numbersArrayNewSyntax)); // Print out the sorted elements/items in the Array
-
+        /*
+         * Multi-Dimensional Arrays
+         *
+         * You can create a 2-Dimensional array to create a matrix.
+         * You can create a 3-Dimensional array to store data for a cube
+         *
+         * These can be useful for scientific computations.
+         */
+        System.out.println();
+        System.out.println("Multi-Dimensional Arrays");
+        // Single Dimensional Array
+        int[] numbersArraySingle = new int[5]; // Single Dimensional Array
+        // 2-Dimensional Array
+        int[][] numbersArrayTwoDim = new int[2][3]; // 2x3 matrix  (2 rows and 3 columns)
+        numbersArrayTwoDim[0][0] = 1; // Index the first row and first column
+        System.out.println(Arrays.toString(numbersArrayTwoDim)); // Since we are working with a 2-Dimensional Array we will receive a memory location
+        System.out.println(Arrays.deepToString(numbersArrayTwoDim)); // Prints out the 2-Dimensional Array elements/items
+        // 3-Dimensional Array
+        int[][][] numbersArrayThreeDim = new int[2][1][10]; // The third [] specifies the length of this dimension
+        numbersArrayThreeDim[0][0][0] = 1;
+        System.out.println(Arrays.deepToString(numbersArrayThreeDim));
+        // 2-Dimensional Array: New Syntax
+        int[][] numbersArrayTwoDimNew = { {1,2,3}, {4,5,6}, {7,7,7,7}};
+        System.out.println(Arrays.deepToString(numbersArrayTwoDimNew));
+        //
+        int[][][] numbersArrayThreeDimNew = { { {2,3,4} }, { {5,5,5} }, { {8,8,8,5,6,7,8} } };
+        System.out.println(Arrays.deepToString(numbersArrayThreeDimNew));
 
     }
 }
