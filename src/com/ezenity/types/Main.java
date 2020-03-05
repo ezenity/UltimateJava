@@ -420,5 +420,24 @@ public class Main {
         int resultXMoreTwo = 1;
         resultXMoreTwo += 2;
         System.out.println(resultXMoreTwo);
+        /*
+         * Order of Operations
+         *
+         * In the variable "xOrder" the value is "16" because "*" takes priority over "+". If we wanted to change the order of operation and make "+" priority, we
+         * can use parenthesis(). Check out xOrderTwo for an example.
+         *
+         * List of Operations in priority order
+         *      ()
+         *      * /
+         *      + -
+         *
+         * Keep in mind that the order of operations are reads left to right so if our value have something like: 9 + 9 * 5 / 2  The * will be utilized first then the division then the addition
+         */
+        System.out.println();
+        System.out.println("Order of Operations");
+        int xOrder = 10 + 3 * 2;
+        System.out.println(xOrder);
+        int xOrderTwo = (10 +3) * 2;
+        System.out.println(xOrderTwo);
     }
 }
