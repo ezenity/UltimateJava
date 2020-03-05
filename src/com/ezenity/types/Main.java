@@ -468,5 +468,59 @@ public class Main {
         int convertingString = Integer.parseInt(castingString); // Wrapper cast for the "int" primitive type
         int castinYString = convertingString + 2;
         System.out.println(castinYString);
+        /*
+         * The Math Class
+         *
+         *  Round() = Allows you to round a float or double number to a whole number
+         *  ceil() = Returns the smallest integer that is greater or equal to the provided number
+         *  floor() = Returns the largest integer that is smaller or equal to the provided number
+         *  max() = Returns the greater of two values
+         *  min() = Returns the smallest of two values
+         *  random() = Generates a random float value between 0 - 1 by default
+         *
+         */
+        System.out.println();
+        System.out.println("The Math Class");
+        int resultMathRound = Math.round(1.1F);
+        System.out.println(resultMathRound);
+
+        int resultMathCeil = (int)Math.ceil(1.1F);
+        System.out.println(resultMathCeil);
+
+        int resultMathFloor = (int)Math.floor(1.1F);
+        System.out.println(resultMathFloor);
+
+        int resultMathMax = Math.max(1,2);
+        System.out.println(resultMathMax);
+
+        int resultMathMin = Math.min(1,2);
+        System.out.println(resultMathMin);
+
+        double resultMathRandom = Math.random(); // Float Example: Default 0 - 1
+        System.out.println(resultMathRandom);
+
+        double resultMathRandomTwo = Math.random() * 100; // Float Example: 0 - 100
+        System.out.println(resultMathRandomTwo);
+
+        double resultMathRandomRound = Math.round(Math.random() * 100); // Integer Example: 0 - 100
+        System.out.println(resultMathRandomRound);
+        /*
+         * Now with the example above we are still receiving a decimal 0.0 so if we change double to int we get a compilation error.
+         *      int resultMathRandomRound = Math.round(Math.random() * 100);
+         * Why, because the round() method returns a long, but we are declaring an integer. This would be one of the cases where we cannot do implicit(auto) casting. The reason
+         * for this is that we have a value that is 8 bytes of memory, and we want to store that variable into 4 bytes of memory. However, we can use explicit casting because we
+         * know that the results of this expression is a number between 0 - 100.
+         *
+         */
+        int resultMathRandomRoundExplicit = (int) Math.round(Math.random() * 100);
+        System.out.println(resultMathRandomRoundExplicit);
+        /*
+         * Now let's say we don't use the round() method.
+         *      int resultMathRandomRoundExplicitTwo = (int) Math.random() * 100;
+         * Now every time we print "resultMathRandomRoundExplicit" variable we get a "0" value. The reason is that we are casting to the result of the Math.random() method, not the
+         * entire expression. To fix this we can wrap the expression in parentheses.
+         */
+        int resultMathRandomRoundExplicitTwo = (int) (Math.random() * 100);
+        System.out.println(resultMathRandomRoundExplicitTwo);
     }
 }
