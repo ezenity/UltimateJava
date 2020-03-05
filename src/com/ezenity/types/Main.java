@@ -220,5 +220,36 @@ public class Main {
         System.out.println(messageString.toLowerCase()); // Converts all characters to lower case, which will return a new String object
         System.out.println(messageString.toUpperCase()); // Converts all characters to upper case, which will return a new String object
         System.out.println(messageString.trim()); // Will remove all white spaces (Space) at the end or beginning of the String
+        /*
+         * Escape Sequences
+         *
+         * When trying to add special characters into your string you get compilation errors. To fix these compilation errors you can use
+         * the following samples below:
+         *
+         * Tab: \t
+         *      This will add a tab inside your String
+         * New Line: \n
+         *      This will add a new line to your String after the "\n" escape sequence
+         * Backslash: \\
+         *       This will add a blackslash to your String
+         * Double Quotes: \" TEXT \"
+         *       This will add double quotes to your String
+         *
+         * Can see examples below
+         */
+        System.out.println();
+        System.out.println("Escape Sequences");
+        String messageDoubleQuotes = "Hello \"Ant\"";
+        System.out.println(messageDoubleQuotes);
+
+        String messageBackslash = "c:\\Windows\\...";
+        System.out.println(messageBackslash);
+
+        String messageNewLine = "c:\nWindows\\...";
+        System.out.println(messageNewLine);
+
+        String messageTab = "c:\tWindows\\...";
+        System.out.println(messageTab);
+
     }
 }
