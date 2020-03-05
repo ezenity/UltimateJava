@@ -2,6 +2,7 @@ package com.ezenity.types;
 
 import java.awt.*;
 import java.lang.reflect.Array;
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
 
@@ -522,5 +523,37 @@ public class Main {
          */
         int resultMathRandomRoundExplicitTwo = (int) (Math.random() * 100);
         System.out.println(resultMathRandomRoundExplicitTwo);
+        /*
+         * Formatting Numbers
+         *
+         * Image we want to display numbers a certain way with the correct formatting:
+         *      123456789 = $123,456,789
+         *      0.1 = 10%
+         * We can format these using the NumberFormat{} class, which is inside the Java.text package. In this package we have a lot of classes for handling text, dates, numbers, and so on.
+         *
+         *      NumberFormat formattingCurrency = new NumberFormat();
+         * Now if you noticed you will get a compilation error with the above example, because it is an Abstract class. You cannot use a new operator to create an instance of them. Think
+         * of them as a half-baked cake, and you are required to complete the cake with the Abstract Class methods. Will learn more later in course. Instead, we can use something that is
+         * called a "Factory Method".
+         *
+         * Factory Method: Creates new objects like a factory (person definition)
+         * Method Chaining: We are chaining multiple methods together (View variable percentStringChaining for an example)
+         *
+         *
+         *
+         */
+        System.out.println();
+        System.out.println("Formatting Numbers");
+        // Currency Formatting
+        NumberFormat formattingCurrency = NumberFormat.getCurrencyInstance();
+        String currencyString = formattingCurrency.format(1234567.891);
+        System.out.println(currencyString);
+        // Percent Formatting
+        NumberFormat formattingPercent = NumberFormat.getPercentInstance();
+        String percentString = formattingPercent.format(0.1);
+        System.out.println(percentString);
+        // Method Chaining
+        String percentStringChaining = NumberFormat.getPercentInstance().format(0.2);
+        System.out.println(percentStringChaining);
     }
 }
