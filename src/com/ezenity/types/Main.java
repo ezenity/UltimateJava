@@ -332,6 +332,18 @@ public class Main {
         //
         int[][][] numbersArrayThreeDimNew = { { {2,3,4} }, { {5,5,5} }, { {8,8,8,5,6,7,8} } };
         System.out.println(Arrays.deepToString(numbersArrayThreeDimNew));
+        /*
+         * Constants
+         *
+         * With variables, we can change them later on throughout the lifetime of our program/application. However, let's say we have a variable we do not
+         * want changing for example pi. We use pi to calculate the area of a circle. If we later tried to change "pi" this will cause unforeseen errors
+         * inside our application. To fix this we can use constants.
+         *
+         * Constants initialize the variable so that we may not modify it later in our program. When we are using constants the variable will always
+         * be UPPER_CASE. to treat a variable as a constant we want to add the word "final" in front of the variable type.
+         */
+        final float PI = 3.14F;
+        // pi = 1; // When trying to change the value we get an error since pi is a constant.
 
     }
 }
