@@ -439,5 +439,34 @@ public class Main {
         System.out.println(xOrder);
         int xOrderTwo = (10 +3) * 2;
         System.out.println(xOrderTwo);
+        /*
+         * Casting & Type Conversion
+         *
+         * When we are working with integers implicit (auto) casting occurs when we will not lose data, no chance of data being lost. We can also do Explicit casting which can be viewed in example
+         * "castingYDoubleTwo". However, we cannot cast a String to a Number and cannot cast a Number to a String. Instead, we need to use a wrapper class. Check out the example "castingString".
+         *
+         * The main reason why we would need to parse a string into a number is because whenever we are creating anything (Mobile App, Web App, etc) the user will always provide a string regards
+         * of how it was obtained. This will also use to convert the necessary data to continue with our program.
+         */
+        System.out.println();
+        System.out.println("Casting & Type Conversion");
+        // Implicit(auto) casting
+        // byte > short > int > long > float > double
+        short castingX = 1;
+        int castingY = castingX + 2;
+        System.out.println(castingY);
+        // Implicit(auto) casting
+        double castingXDouble = 1.1;
+        double castingYDouble = castingXDouble + 2; // 2 is casted into a double and is now 2.0
+        System.out.println(castingYDouble);
+        // Implicit(auto) casting: We want no decimals and want a whole number
+        double castingXDoubleTwo = 1.1;
+        int castingYDoubleTwo = (int)castingXDoubleTwo + 2; // Explicit casting "int" to the "double" variable "castingXDoubleTwo"
+        System.out.println(castingYDoubleTwo);
+        // Wrapper Class utilization
+        String castingString = "1";
+        int convertingString = Integer.parseInt(castingString); // Wrapper cast for the "int" primitive type
+        int castinYString = convertingString + 2;
+        System.out.println(castinYString);
     }
 }
