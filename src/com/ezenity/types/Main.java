@@ -1,6 +1,7 @@
 package com.ezenity.types;
 
 import java.awt.*;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Main {
@@ -250,6 +251,60 @@ public class Main {
 
         String messageTab = "c:\tWindows\\...";
         System.out.println(messageTab);
+        /*
+         * Arrays
+         *
+         * You use Arrays to store a list of items. For example, you can have a list of numbers, a list of people
+         * and so on.
+         *
+         * To create an Array you want to add [] to the end of the type you are utilizing as shown below. Since Arrays are reference types,
+         * you will want to use the "new" operator and then repeat the type again and then specify the size or length of your Array. Example
+         * is below.
+         *
+         * You can access these Arrays by using an index "numbersArray[0]" 0 being the first element/item in your Array. If you use an
+         * invalid index, say for example numbersArray[10], you will receive a compilation error (Exception). Exceptions are Java's way to
+         * report errors. We received this Exception because our Array only has 5 elements/items.
+         *
+         * Now let's say we want to print out our elements/items, we can do so by doing "System.out.println(numbersArray);". However, you will
+         * get a weird String and not your actual Array values. This String is the address of the object in memory (Its memory location). Let's
+         * say we had another Array, and we print that, the String will be different since it will be located in a different memory space.
+         *
+         * To seethe actual value which is in the array we will want to use the Java Class Arrays{}. The Arrays{} class provides something that
+         * is called "Method Overload". One method called "toString()" provides various parameters such as "float, int, byte, etc.." which you
+         * can utilize to get the output you are requiring.
+         *
+         * When you output the Arrays' element we will see something like [1, 2, 0, 0]. 1 & are initialized, and the rest are set to 0 by default
+         * because we are dealing with an integer array. If we had a boolean array, all elements/items get set to false by default. If we
+         * had a String array all elements/items will get set to an empty string.
+         *
+         * Below we have two examples of how to utilize an Array, Old Syntax and New Syntax. If we know ahead of time what the values are we can
+         * utilize the New Syntax.
+         *
+         * With the New Syntax, we can input the Array values in a {} which will also determine the Array length. Also keep in mind that in Java
+         * Arrays have a fixed size. Once an Array has been created, we cannot add or remove additional elements/items to them, this is what we call
+         * a fixed length. To add or remove elements/items from an Array you would want to use one ofthe collection classes which will be touched
+         * on later in this course.
+         *
+         * Let's say your Array is not sorted and is in random order: {2,3,5,1,4}. If you would like to sort these numbers you can easily do so by
+         * using the sort() method inside the Arrays{} class.
+         *
+         */
+        System.out.println();
+        System.out.println("Arrays");
+        // OLD SYNTAX
+        int[] numbersArrayOldSyntax = new int[5];
+        numbersArrayOldSyntax[0] = 1; // 1st Index
+        numbersArrayOldSyntax[1] = 2; // 2nd Index
+        // numbersArray[10] = 3; // Gives Exception error since we do not have 10 elements/items in our Array
+        System.out.println(numbersArrayOldSyntax); // Gives us the memory location for the Array
+        System.out.println(Arrays.toString(numbersArrayOldSyntax)); // Outputs the Array elements/items
+        // NEW SYNTAX
+        int[] numbersArrayNewSyntax = {2,3,5,1,4};
+        System.out.println(numbersArrayNewSyntax); // Gives us the memory location for the Array
+        System.out.println(numbersArrayNewSyntax.length); // Gives us the amount of elements/items in the array (Array Length)
+        Arrays.sort(numbersArrayNewSyntax); // Sort the elements/items in the Array
+        System.out.println(Arrays.toString(numbersArrayNewSyntax)); // Print out the sorted elements/items in the Array
+
 
     }
 }
