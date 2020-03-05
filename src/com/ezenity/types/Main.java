@@ -342,8 +342,83 @@ public class Main {
          * Constants initialize the variable so that we may not modify it later in our program. When we are using constants the variable will always
          * be UPPER_CASE. to treat a variable as a constant we want to add the word "final" in front of the variable type.
          */
+        System.out.println();
+        System.out.println("Constants");
         final float PI = 3.14F;
+        System.out.println(PI);
         // pi = 1; // When trying to change the value we get an error since pi is a constant.
-
+        /*
+         * Arithmetic Expressions
+         *
+         * In Java, we have the same arithmetic expressions we have in math, for example:
+         *  Addition: +
+         *  Subtraction: -
+         *  Multiplication: *
+         *  Division: /
+         *  Modulo(Remainder of Division): %
+         *
+         * In Java, dividing two whole numbers will output another whole number. If we wanted to get the decimal in a division, we need to convert the whole number
+         * into a float or a double. To do this we need to cast the type in front of the value.
+         *
+         * The values being used in the arithmetic expression are called "Operands".
+         *
+         * Increment & Decrement Operators
+         *      Increment: ++
+         *      Decrement: --
+         *
+         * you can increment a value using ++ in front (Pre-Fix) of the variable or behind (Post-Fix) the variable. This will increase the value by one, same results.
+         * However, if we use this on the right side of an assignment operator, we will get different results.
+         *
+         * If we add a Post-Fix Increment, the value will get copied first to the new assigned variable and then will be increased: Look at example "resultXThree & resultY".
+         * if we add a Pre-Fix Increment, the value will get incremented and then it will be copied to the new assigned variable: Look at example "resultXFour & resultYTwo".
+         *
+         * Augmented/Compound Assignment Operators
+         *      +=
+         *      -=
+         *      *=
+         *      /=
+         *
+         */
+        System.out.println();
+        System.out.println("Arithmetic Expressions");
+        int resultExpressionAdd = 10 + 3;
+        int resultExpressionSubtract = 10 - 3;
+        int resultExpressionMulti = 10 * 3;
+        int resultExpressionDivision = 10 / 3;
+        int resultExpressionRemainder = 10 % 3;
+        System.out.println(resultExpressionAdd);
+        System.out.println(resultExpressionSubtract);
+        System.out.println(resultExpressionMulti);
+        System.out.println(resultExpressionDivision);
+        System.out.println(resultExpressionRemainder);
+        // Division convert Example
+        double resultExpressionDivisionConvert = (double)10 / (double)3;
+        System.out.println(resultExpressionDivisionConvert);
+        // Post-Fix Increment
+        int resultX = 1;
+        resultX++; // Post-Fix Increment Operator
+        System.out.println(resultX);
+        // Pre-Fix Increment
+        int resultXTwo = 1;
+        ++resultXTwo; // Pre-Fix Increment Operator
+        System.out.println(resultXTwo);
+        // Assignment Operator: Post-Fix
+        int resultXThree = 1;
+        int resultY = resultXThree++;
+        System.out.println(resultXThree);
+        System.out.println(resultY);
+        // Assignment Operator: Pre-Fix
+        int resultXFour = 1;
+        int resultYTwo = ++resultXFour;
+        System.out.println(resultXFour);
+        System.out.println(resultYTwo);
+        // Increment by more: Arithmetic Expression
+        int resultXMore = 1;
+        resultXMore = resultXMore + 2;
+        System.out.println(resultXMore);
+        // Increment by more: Augmented/Compound assignment Operator
+        int resultXMoreTwo = 1;
+        resultXMoreTwo += 2;
+        System.out.println(resultXMoreTwo);
     }
 }
