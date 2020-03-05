@@ -5,6 +5,7 @@ import java.lang.reflect.Array;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
 
@@ -555,5 +556,35 @@ public class Main {
         // Method Chaining
         String percentStringChaining = NumberFormat.getPercentInstance().format(0.2);
         System.out.println(percentStringChaining);
+        /*
+         * Reading Input
+         *
+         * You can read input for a user using the Scanner{} class
+         */
+        System.out.println();
+        System.out.println("Reading Input");
+        // Initialize the Scanner variable
+        Scanner scanner = new Scanner(System.in);
+        /*
+         * Weird bug so added this example first to get it functional in console
+         */
+        System.out.flush();
+        System.out.print("Name Two: ");
+        String scannerNameTwo = scanner.nextLine().trim(); // Adding trim() method removes any unnecessary white spaces in the user input
+        System.out.println("You are " + scannerNameTwo);
+        // Concatenating a String
+        System.out.print("Age: "); // Use print() method so that the inputted value stays on the same line
+        byte scannerAge = scanner.nextByte();
+        System.out.println("You are " + scannerAge); // Concatenating a String with a Byte
+        /*
+         * When we type our name "Anthony" it will output your name "Anthony" however, if you want to add your full name say, "Anthony MacAllister" Only "Anthony" wil lbe displayed. Each String
+         * is called a token. Token 1 "Anthony" & Token 2 "MacAllister". Every time we call the next() method, it only reads one token. To call both Tokens we can use the nextLine() method.
+         */
+        // Calling one token
+        System.out.print("Name: ");
+        String scannerName = scanner.next();
+        System.out.println("You are " + scannerName);
+        // Calling all tokens
+            // A weird bug, so added it as first input option
     }
 }
