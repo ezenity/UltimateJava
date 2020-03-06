@@ -54,6 +54,46 @@ public class Main {
         boolean logicalOrHasCriminalRecord = false;
         boolean logicalOrIsEligible = (logicalOrHasHighIncome || logicalOrHasGoodCredit) && !logicalOrHasCriminalRecord;
         System.out.println(logicalOrIsEligible);
+        /*
+         * If Statements
+         *
+         * If statements allows us to build programs based on certain conditions.
+         *
+         * Here is a text example below:
+         *      If temperature is greater than 30
+         *          It's a hot day
+         *          Drink plenty of water
+         *      Otherwise, if it's between 20 and 30
+         *          It's a nice day
+         *      Otherwise
+         *          It's cold
+         * Here is a code example below:
+         *       int ifStateTemp = 32;
+         *       if (ifStateTemp > 30){
+         *           System.out.println("It's a hot day");
+         *           System.out.println("Drink plenty of water");
+         *      } else if (ifStateTemp > 20 && ifStateTemp <= 30) {
+         *           System.out.println("It's a nice day");
+         *       } else {
+         *           System.out.println("It's cold");
+         *       }
+         *
+         * Below will simplify the above code to remove noise. If you noticed we have removed the curly braces from the other clauses (if statements). Then only time
+         * we are required to add the curly braces are when we have multiple statements. another PRO for using the style is that it makes reading your statement easier.
+         * We also remove the logical operator "ifStateTemp <= 30" because the first expression check if the temperature is greater than 30. If it is not then it
+         * goes to the next clause, which means that the temperature is equal to or less than 30.
+         */
+        System.out.println();
+        System.out.println("If Statements");
+        int ifStateTemp = 32;
+        if (ifStateTemp > 30){
+            System.out.println("It's a hot day");
+            System.out.println("Drink plenty of water");
+        }
+        else if (ifStateTemp > 20)
+            System.out.println("It's a nice day");
+        else
+            System.out.println("It's cold");
 
     }
 }
