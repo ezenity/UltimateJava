@@ -586,5 +586,62 @@ public class Main {
         System.out.println("You are " + scannerName);
         // Calling all tokens
             // A weird bug, so added it as first input option
+
+
+        /*
+         * Project: Mortgage Calculator
+         *
+         * Principal: Amount of loan
+         * Annual Interest Rate (AIR):
+         * Period (Years):
+         * Mortgage: $
+         *
+         * Formula: M = P * r(1 + r) POWER n
+         *      M = Monthly Payment
+         *      P = Principal
+         *      r =  Monthly interest rate (divide by your annual interest rate by 21)
+         *      n = number of payments
+         *
+         *  100,000 *  NEW_AIR (1 + NEW_AIR) * Period
+         *
+         * AIR / 100  (to get the percent for the NEW_AIR value)
+         * NEW_AIR / 12 (This gets you the monthly interest rate)
+         *
+         */
+
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("Project: Mortgage Calculator");
+        // Principal
+        System.out.print("Principal: ");
+        int projectPrinciple = scanner.nextInt();
+        // AIR
+        System.out.print("Annual Interest Rate: ");
+        float projectAnnualRate = scanner.nextFloat();
+        float projectAnnualRateDivided = projectAnnualRate / 100;
+        float projectAIRD = projectAnnualRateDivided / 12; // Monthly Interest Rate
+        // Period
+        System.out.print("Period (Years): ");
+        byte projectPeriod = scanner.nextByte();
+        int projectPeriodMultiple = projectPeriod * 12;
+        //int projectPeriodMultiple = (int) Math.pow(projectPeriod, 12);
+        // MATH
+        //int projectMonthlyRate = (int) ((projectAnnualRate / 100) / 12);
+        //int projectMortgage = (projectPrinciple * projectMonthlyRate) + (1 + projectMonthlyRate) * (projectPeriod);
+        double projectMortgage =
+                projectPrinciple *
+                        (projectAIRD * Math.pow(1 + projectAIRD, projectPeriodMultiple)) /
+                        (Math.pow(1 + projectAIRD, projectPeriodMultiple) - 1);
+
+        String projectCurrencyString = formattingCurrency.format(projectMortgage);
+
+        // Mortgage
+        System.out.print("Mortgage: " + projectCurrencyString);
+
+
+
+
+
     }
 }
