@@ -7,6 +7,33 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 
+/**
+ * Summary
+ * <p>
+ * <p>
+ * Variables and Constants
+ * <p>
+ * Primitive and Reference Types
+ * <p>
+ * <ul>
+ *     <li>
+ *         Primitive types store simple values
+ *     </li>
+ *     <li>
+ *         Reference types hold references to complex objects
+ *     </li>
+ * </ul>
+ * Casting and Type conversion
+ * <p>
+ * <ul>
+ *     <li>
+ *         Two types of casting: implicit & explicit
+ *     </li>
+ * </ul>
+ * Numbers, Strings and Arrays
+ * <p>
+ * Read Input
+ */
 public class Main {
 
     public static void main(String[] args) {
@@ -703,10 +730,5 @@ public class Main {
 
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Mortgage: " + mortgageFormatted);
-
-
-
-
-
     }
 }
