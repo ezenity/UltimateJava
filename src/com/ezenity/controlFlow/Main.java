@@ -216,5 +216,34 @@ public class Main {
             System.out.println("Buzz");
         else
             System.out.println(number);
+        /*
+         *
+         * For Loops
+         *
+         * For loops are good for when you want to repeat one or more statements. With a for loop you need to do 3 things to properly run a for loop.
+         *
+         * for (counter variable; boolean expression; increment){}
+         *      Counter Variable: We use variable names like -> "i, j, k"
+         *      Boolean Expression: Determines how many times this loop is going to be executed -> "i < 5"
+         *          So as long as i is less than 5 the loop will be executed
+         *      Increment: We increment by one -> "i++"
+         *
+         *
+         *
+         */
+        System.out.println();
+        System.out.println("For Loop");
+        // Increment Basic
+        for (int i = 0;i < 5; i++)
+            System.out.println("Hello World ");
+            System.out.println();
+        // Increment & print "i"
+        for (int i = 0;i < 5; i++)
+            System.out.println("Hello World " + i);
+            System.out.println();
+        // Decrement & print i
+        for (int i = 5;i > 0; i--)
+            System.out.println("Hello World " + i);
+
     }
 }
