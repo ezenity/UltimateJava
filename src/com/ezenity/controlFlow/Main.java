@@ -314,8 +314,33 @@ public class Main {
                 break; // Applying the break; will exit out of the while loop block
             System.out.println(input);
         }
+        /*
+         * For-Each Loop
+         *
+         * We use the for-each loop to iterate over arrays or collections.
+         *
+         */
+        System.out.println();
+        System.out.println("For-Each Loop");
+        String[] fruits = {"Apple", "Mango", "Orange"};
 
-
-
+        for (int i = 0; i < fruits.length; i++)
+            System.out.println(fruits[i]);
+        System.out.println();
+        /*
+         * One problem with this is that we can only loop forward and not backward. This is where a for loop is handy.
+         *
+         * Another problem with this is that we can only get the value of the array and not the index.
+         */
+        for (String fruit : fruits)
+            System.out.println(fruit);
+        /*
+         * Iterate backwards with for loop
+         *
+         *   i = index
+         *   fruits = values
+         */
+        for (int i = fruits.length; i > 0; i--)
+            System.out.println(fruits[i]);
     }
 }
