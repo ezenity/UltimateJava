@@ -187,9 +187,9 @@ public class Main {
         int exFizz = (exerciseFizzBuzzInput % 5 == 0) ? 1 : 0;
         int exBuzz = (exerciseFizzBuzzInput % 3 == 0) ? 1 : 0;
 
-        if (exerciseFizzBuzzInput > 127){
+        if (exerciseFizzBuzzInput > 127)
             System.out.println("Please input a value from -127 to 127");
-        } else {
+        else
             if (exFizz == 1 && exBuzz == 1)
                 System.out.println("fizzBuzz");
             else if (exFizz == 1)
@@ -198,6 +198,23 @@ public class Main {
                 System.out.println("Buzz");
             else
                 System.out.println(exerciseFizzBuzzInput);
-        }
+
+        /*
+         * Exercise: FizzBuzz (Mosh Solution)
+         */
+        System.out.println();
+        System.out.println("Exercise: FizzBuzz (Mosh Solution)");
+
+        System.out.print("Number: ");
+        int number = scanner.nextInt();
+
+        if (number % 5 == 0 && number % 3 == 0)
+            System.out.println("FizzBuzz");
+        else if (number % 5 == 0)
+            System.out.println("Fizz");
+        else if (number % 3 == 0)
+            System.out.println("Buzz");
+        else
+            System.out.println(number);
     }
 }
