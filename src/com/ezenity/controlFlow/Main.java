@@ -129,6 +129,40 @@ public class Main {
          */
         int ternaryIncome = 120_000;
         String ternaryClassName = ternaryIncome > 100_000 ? "First" : "Economy";
+        /*
+         * Switch Statements
+         *
+         * Below is an example of how to use a switch statement instead of the if statement. Both of which will give the same outcome. Using switch statements is sometimes cleaner
+         * than using an if statement.
+         *
+         * With switch statements you want to add the "break;" after your code is completed. The "break;" will break out of the code block and execute. If none of the switch cases
+         * are true the switch statement will run the default and exit out of the block so no need for a "break;". If you wanted to run multiple cases you can remove the "break;"
+         * from that case, and it will move on to the next case.
+         *
+         * Switch statements can also use number types, except for long type.
+         *      Byte, Short, Int
+         *
+         */
+        System.out.println();
+        System.out.println("Switch Statements");
+        String switchRole = "admin";
 
+        switch (switchRole){
+            case "admin":
+                System.out.println("You're an admin");
+                break;
+            case "moderator":
+                System.out.println("You're a moderator");
+                break;
+            default:
+                System.out.println("You're a guest");
+        }
+
+        if (switchRole == "admin")
+            System.out.println("You're an admin");
+        else if (switchRole == "moderator")
+            System.out.println("You're a moderator");
+        else
+            System.out.println("You're a guest");
     }
 }
