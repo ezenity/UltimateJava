@@ -94,6 +94,26 @@ public class Main {
             System.out.println("It's a nice day");
         else
             System.out.println("It's cold");
+        /*
+         * Simplifying If Statements
+         *
+         * Writing code like this is considered very amateurish and professional developers do not write their code like this.
+         *
+         *      int ifSimplifiedIncome = 120_000;
+         *      boolean ifSimplifiedhasHighIncome = false;
+         *
+         *       if (ifSimplifiedIncome > 100_000)
+         *           ifSimplifiedhasHighIncome = true;
+         *       else
+         *           ifSimplifiedhasHighIncome = false;
+         *
+         *        System.out.println(ifSimplifiedhasHighIncome);
+         *
+         * Below you will see a simplified version where professional developers utilize
+         */
+        int ifSimplifiedIncome = 120_000;
+        // You don't need () but by using the () it makes it clear the this is a boolean expression
+        boolean ifSimplifiedhasHighIncome = (ifSimplifiedIncome > 100_000);
 
     }
 }
