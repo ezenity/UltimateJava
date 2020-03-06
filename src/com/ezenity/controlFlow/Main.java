@@ -118,8 +118,17 @@ public class Main {
         boolean ifSimplifiedhasHighIncome = (ifSimplifiedIncome > 100_000);
         System.out.println(ifSimplifiedhasHighIncome);
         /*
+         * The Ternary Operator
          *
+         * With the Ternary operator we are able to create conditions on one line. Since our variable is a String we are not able to use the simplified if statement. By using
+         * the Ternary operator we can keep our program clean and very professional.
+         *  Operator Example
+         *      CONDITION_HERE ? TRUE_OPTION : FALSE_OPTION;
+         *
+         * See example below
          */
+        int ternaryIncome = 120_000;
+        String ternaryClassName = ternaryIncome > 100_000 ? "First" : "Economy";
 
     }
 }
