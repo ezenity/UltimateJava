@@ -262,7 +262,7 @@ public class Main {
         System.out.println();
         System.out.println("While Loop");
         // Scanner object created here in Mosh example
-        // Scanner object is outside the "while loop", so it doesn't keep recreating itself
+            // Scanner object is outside the "while loop", so it doesn't keep recreating itself
         String input = "";
         while (!input.equalsIgnoreCase("quit")){
             System.out.print("Input: ");
@@ -281,6 +281,39 @@ public class Main {
             input = scanner.next();
             System.out.println(input);
         } while (!input.equalsIgnoreCase("quit"));
+        /*
+         * Break And Continue Statements
+         *
+         * Break: Terminates a loop
+         * Continue: Moves control to the beginning of the loop
+         *
+         * If you are using a "while(true){}" make sure you have a "break;" inside your block
+         */
+        System.out.println();
+        System.out.println("Break And Continue Statements");
+        // Scanner object created here in Mosh example (Scanner above in code)
+            // Scanner object is outside the "while loop", so it doesn't keep recreating itself
+        // input String is created here in Mosh example (Input above in code)
+        // while (!input.equalsIgnoreCase("quit")){ // Not needed since we have an if statement below for checking "quit"
+        while (true){ // This loop will always run true until the break statement is enabled
+            System.out.print("Input: ");
+            input = scanner.next();
+            /*
+             * The "continue" will start the while loop over from the beginning and not execute any code after it
+             */
+            if (input.equalsIgnoreCase("pass"))
+                continue;
+            /*
+             * There is any cleaner way implementing this so that the "quit" oes not get printed to console
+             *
+             *   if (!input.equalsIgnoreCase("quit"))
+             *       System.out.println(input);
+             *
+             */
+            if (input.equalsIgnoreCase("quit"))
+                break; // Applying the break; will exit out of the while loop block
+            System.out.println(input);
+        }
 
 
 
