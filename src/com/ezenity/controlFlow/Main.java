@@ -244,6 +244,32 @@ public class Main {
         // Decrement & print i
         for (int i = 5;i > 0; i--)
             System.out.println("Hello World " + i);
+        /*
+         * While Loops
+         *
+         * While loops are similar to for loops in terms to their functionality, however they are different when it comes to syntax. The below example outputs the same however the for loop is lighter.
+         *
+         * It is better to use a "while loop" when we do not know how many times we want to repeat something.
+         *       for (int i = 0;i < 5; i++)
+         *           System.out.println("Hello World " + i);
+         *
+         *       int i = 0;
+         *       while (i > 0){
+         *           System.out.println("Hello World " + i);
+         *           i--;
+         *       }
+         */
+        System.out.println();
+        System.out.println("While Loop");
+        // Scanner object created here in Mosh example
+        // Scanner object is outside the "while loop", so it doesn't keep recreating itself
+        String input = "";
+        while (!input.equalsIgnoreCase("quit")){
+            System.out.print("Input: ");
+            input = scanner.next();
+            System.out.println(input);
+        }
+
 
     }
 }
