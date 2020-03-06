@@ -274,11 +274,14 @@ public class Main {
          *
          * Do..While Loop is similar to a "While Loop", but it gets executed at least once even if the statement is false.
          */
+        System.out.println();
+        System.out.println("Do..While Loops");
         do {
             System.out.print("Input: ");
             input = scanner.next();
             System.out.println(input);
         } while (!input.equalsIgnoreCase("quit"));
+
 
 
     }
