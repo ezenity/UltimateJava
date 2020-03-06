@@ -14,6 +14,9 @@ public class Project {
         System.out.println("Project: Mortgage Calculator");
         final byte MONTHS_IN_YEARS = 12; // Constant
         final byte PERCENT = 100; // Constant
+        /*
+         * We declared these variables so that it can be utilized outside the while loop blocks
+         */
         int principal = 0;
         float monthlyInterest = 0;
         int numberOfPayments = 0;
@@ -22,16 +25,14 @@ public class Project {
         while (true) {
             System.out.print("Principal ($1k - $1M): ");
             /*
-             * We did not use "short" type because it has a max of 32k and that is not enough. If a person wanted to finance 1 million dollars this would be a problem. Since we used int
+             * We did not use "short" type because it has a max of 32k and that is not enough.
+             * If a person wanted to finance 1 million dollars this would be a problem. Since we used int
              * we can store a value up to 2 billion.
              */
             principal = scanner.nextInt();
-
-            if (scanner.nextInt() < 1_000 || scanner.nextInt() > 1_000_000) {
-                System.out.println("Please enter an amount between $1k - $1M");
-                continue;
-            }
-            break;
+            if (scanner.nextInt() >= 1_000 && scanner.nextInt() <= 1_000_000)
+                break;
+            System.out.println("Please enter an amount between $1k - $1M");
         }
 
         while (true) {
@@ -41,9 +42,9 @@ public class Project {
              */
             float annualInterest = scanner.nextFloat();
 
-            if (annualInterest < 1 || annualInterest > 30) {
-                System.out.println("Enter a value greater than 0 and less than 30");
-                continue;
+            if (annualInterest >= 1 && annualInterest <= 30){
+                monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEARS;
+                break;
             }
             /*
              * Avoid magic numbers when possible so that the next developer can understand what the variables are being used for.
@@ -51,8 +52,7 @@ public class Project {
              * Magic numbers would be the 12 and 100 in the example below:
              *      float monthlyInterest = annualInterest / 100 / 12;
              */
-            monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEARS;
-            break;
+            System.out.println("Enter a value greater than 0 and less than 30");
         }
 
         while (true) {
@@ -62,15 +62,14 @@ public class Project {
              */
             byte years = scanner.nextByte();
 
-            if (years < 1 || years > 30) {
-                System.out.println("Enter a value between 1 and 30.");
-                continue;
+            if (years >= 1 && years <= 30) {
+                numberOfPayments = years * MONTHS_IN_YEARS;
+                break;
             }
             /*
              * Pretty self-explanatory.
              */
-            numberOfPayments = years * MONTHS_IN_YEARS;
-            break;
+            System.out.println("Enter a value between 1 and 30.");
         }
 
             /*
