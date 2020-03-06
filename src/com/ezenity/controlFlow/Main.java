@@ -1,5 +1,7 @@
 package com.ezenity.controlFlow;
 
+import java.util.Scanner;
+
 /**
  * Summary
  * <p>
@@ -167,5 +169,35 @@ public class Main {
             System.out.println("You're a moderator");
         else
             System.out.println("You're a guest");
+        /*
+         * Exercise: FizzBuzz
+         *
+         * Number divisible by 5 = fizz
+         * Number divisible by 3 = Buzz
+         * Number divisible by both 5 and 3 = fizzBuzz
+         * Number not divisible by 5 or 3 = same number printed
+         */
+        System.out.println();
+        System.out.println("Exercise: FizzBuzz");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Number: ");
+        int exerciseFizzBuzzInput = scanner.nextInt();
+
+        int exFizz = (exerciseFizzBuzzInput % 5 == 0) ? 1 : 0;
+        int exBuzz = (exerciseFizzBuzzInput % 3 == 0) ? 1 : 0;
+
+        if (exerciseFizzBuzzInput > 127){
+            System.out.println("Please input a value from -127 to 127");
+        } else {
+            if (exFizz == 1 && exBuzz == 1)
+                System.out.println("fizzBuzz");
+            else if (exFizz == 1)
+                System.out.println("fizz");
+            else if (exBuzz == 1)
+                System.out.println("Buzz");
+            else
+                System.out.println(exerciseFizzBuzzInput);
+        }
     }
 }
