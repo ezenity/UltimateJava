@@ -111,9 +111,15 @@ public class Main {
          *
          * Below you will see a simplified version where professional developers utilize
          */
+        System.out.println();
+        System.out.println("Simplifying If Statements");
         int ifSimplifiedIncome = 120_000;
         // You don't need () but by using the () it makes it clear the this is a boolean expression
         boolean ifSimplifiedhasHighIncome = (ifSimplifiedIncome > 100_000);
+        System.out.println(ifSimplifiedhasHighIncome);
+        /*
+         *
+         */
 
     }
 }
