@@ -127,8 +127,11 @@ public class Main {
          *
          * See example below
          */
+        System.out.println();
+        System.out.println("Ternary Operator");
         int ternaryIncome = 120_000;
         String ternaryClassName = ternaryIncome > 100_000 ? "First" : "Economy";
+        System.out.println(ternaryClassName);
         /*
          * Switch Statements
          *
