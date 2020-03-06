@@ -6,13 +6,50 @@ import java.util.Scanner;
 /**
  * Summary
  * <p>
+ * How to control the flow and execution of your programs
+ * <p>
  * Comparison Operators
+ * <ul>
+ *     <li>
+ *         Used for comparing primitive values
+ *     </li>
+ * </ul>
  * <p>
  * Logical Operators
+ * <ul>
+ *     <li>
+ *         AND
+ *     </li>
+ *     <li>
+ *         OR
+ *     </li>
+ *     <li>
+ *         NOT
+ *     </li>
+ * </ul>
  * <p>
- * Conditional Statements
+ * Control Flow Statements
+ * <ul>
+ *     <li>
+ *         Conditional Statements: If Statement & Switch Statements for making decisions in our programs
+ *     </li>
+ *     <li>
+ *         Loops: For executing code repeatedly
+ *         <ul>
+ *             <li>For Loops</li>
+ *             <li>While Loops</li>
+ *             <li>Do While Loops</li>
+ *             <li>For Each Loops</li>
+ *         </ul>
+ *     </li>
+ * </ul>
  * <p>
- * Loops
+ * Break and Continue
+ * <ul>
+ *     <li>
+ *         For breaking or jumping to the beginning of the loop
+ *     </li>
+ * </ul>
  */
 public class Main {
 
