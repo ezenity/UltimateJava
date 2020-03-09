@@ -81,8 +81,6 @@ public class Main {
         System.out.println();
         System.out.println();
         System.out.println("Project: Mortgage Calculator");
-        final byte MONTHS_IN_YEARS = 12; // Constant
-        final byte PERCENT = 100; // Constant
         /*
          * We declared these variables so that it can be utilized outside the while loop blocks
          */
@@ -205,8 +203,13 @@ public class Main {
      *
      * Now that we moved the numberOfPayments variable to this method we cleaned up our while loop and make the validation check cleaner. Now our numberOfPayments
      * variable has a new compilation error "MONTHS_IN_YEARS". Since we defined this constant in our main method we also need to define it in our calculateMortgage method.
+     *
+     * We had two constants in our main method and since we use both of these constants in the calculation of our mortgage, we went ahead and moved both to this method.
      */
     public static double calculateMortgage(int principal, float annualInterest, byte years){
+        final byte MONTHS_IN_YEARS = 12; // Constant
+        final byte PERCENT = 100; // Constant
+
         float numberOfPayments = years * MONTHS_IN_YEARS;
 
         double mortgage = principal
