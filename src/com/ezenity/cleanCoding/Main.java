@@ -156,9 +156,6 @@ public class Main {
          * conditional statements to valid the value the user is inputting.
          *
          */
-        double mortgage = principal
-                * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
-                / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
 
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Mortgage: " + mortgageFormatted);
@@ -204,9 +201,14 @@ public class Main {
      * Here we are going to create a method for calculating the mortgage. Since our Mortgage variable is a double that is what we will make our method return type. To
      * make this a functional method we need to add parameters. We need principle, annual interest (Better than monthly interest, since we calculated the monthly
      * interest from the annual interest), and finally number of years(Once we have the number of years, we can calculate the number of payments).
+     *
+     * We jsut now copied the mortgage variable to this method, but you can see that the monthlyInterest & numberOfPayments variables have a compilation error.
+     * To fix this we need to get the proper variables from the main method.
      */
-    public static double calculateMortgage(int principle, float annualInterest, byte years){
-
+    public static double calculateMortgage(int principal, float annualInterest, byte years){
+        double mortgage = principal
+                * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
+                / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
     }
 
 }
