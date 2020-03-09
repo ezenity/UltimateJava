@@ -87,8 +87,12 @@ public class Main {
         int principal = 0;
         float annualInterest = 0;
         byte years = 0;
-        float monthlyInterest = 0;
-        int numberOfPayments = 0;
+        /*
+         * Now if you can see that the two variables below are greyed out and that is because they are no longer being used. Why, because we moved them to the calculateMortgage method
+         * so, we can go and removed them but for a demo propose I will comment them out.
+         */
+        // float monthlyInterest = 0;
+        // int numberOfPayments = 0;
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -160,9 +164,12 @@ public class Main {
          * for both annualInterest and years. Why you ask, because both of these variables are declared in our "while loops". They are not available in this code. To fix this error,
          * we need to move this deceleration to the type of the method, so it can be accessed outside the "while loop".
          *
-         * Went ahead and added the appropirate variables and initialized it with a 0 value;
+         * Went ahead and added the appropriate variables and initialized it with a 0 value;
+         *
+         * In the mortgageFormatted String the "mortgage" variable returns a compilation error because we no longer have a variable available since it is now inside our Mortgage
+         * Calculation method. To fix this, we need to make our calculateMortgage() method call a variable.
          */
-        calculateMortgage(principal, annualInterest, years);
+        double mortgage = calculateMortgage(principal, annualInterest, years);
 
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Mortgage: " + mortgageFormatted);
