@@ -85,6 +85,8 @@ public class Main {
          * We declared these variables so that it can be utilized outside the while loop blocks
          */
         int principal = 0;
+        float annualInterest = 0;
+        byte years = 0;
         float monthlyInterest = 0;
         int numberOfPayments = 0;
         Scanner scanner = new Scanner(System.in);
@@ -107,7 +109,7 @@ public class Main {
             /*
              * For the interest rate we could use double or float however, since float uses less memory and is sufficient, it is the better option.
              */
-            float annualInterest = scanner.nextFloat();
+            annualInterest = scanner.nextFloat();
 
             if (annualInterest >= 1 && annualInterest <= 30)
                 break;
@@ -125,7 +127,7 @@ public class Main {
             /*
              * When it comes to how many years a mortgage can be obtained for, byte is the ideal option to use. Byte has a max of 127 which we will never reach will utilize a mortgage period.
              */
-            byte years = scanner.nextByte();
+            years = scanner.nextByte();
 
             if (years >= 1 && years <= 30)
                 break;
@@ -150,6 +152,17 @@ public class Main {
          * conditional statements to valid the value the user is inputting.
          *
          */
+
+        /*
+         * Extracting Methods
+         *
+         * Now we need to calculate our mortgage, so we can now call our calculateMortgage method and add the necessary parameters. Now if you can notice, we have a compilation error
+         * for both annualInterest and years. Why you ask, because both of these variables are declared in our "while loops". They are not available in this code. To fix this error,
+         * we need to move this deceleration to the type of the method, so it can be accessed outside the "while loop".
+         *
+         * Went ahead and added the appropirate variables and initialized it with a 0 value;
+         */
+        calculateMortgage(principal, annualInterest, years);
 
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Mortgage: " + mortgageFormatted);
