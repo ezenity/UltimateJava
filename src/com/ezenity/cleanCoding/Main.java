@@ -131,10 +131,8 @@ public class Main {
              */
             byte years = scanner.nextByte();
 
-            if (years >= 1 && years <= 30) {
-                numberOfPayments = years * MONTHS_IN_YEARS;
+            if (years >= 1 && years <= 30)
                 break;
-            }
             /*
              * Pretty self-explanatory.
              */
@@ -204,8 +202,13 @@ public class Main {
      *
      * We jsut now copied the mortgage variable to this method, but you can see that the monthlyInterest & numberOfPayments variables have a compilation error.
      * To fix this we need to get the proper variables from the main method.
+     *
+     * Now that we moved the numberOfPayments variable to this method we cleaned up our while loop and make the validation check cleaner. Now our numberOfPayments
+     * variable has a new compilation error "MONTHS_IN_YEARS". Since we defined this constant in our main method we also need to define it in our calculateMortgage method.
      */
     public static double calculateMortgage(int principal, float annualInterest, byte years){
+        float numberOfPayments = years * MONTHS_IN_YEARS;
+
         double mortgage = principal
                 * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
