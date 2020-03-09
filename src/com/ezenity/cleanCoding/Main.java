@@ -238,10 +238,13 @@ public class Main {
         final byte PERCENT = 100; // Constant
         /*
          * Mosh noticed an error with creating the numberOfPayments. We do not need a float here and instead we could use a "short" type. However, we do receive an compilation error.
-         * Why, because by default the expression is an integer. To fix this issue, we need to cast the results to a "short"
+         * Why, because by default the expression is an integer. To fix this issue, we need to cast the results to a "short".
+         *
+         * However, once we applied short in the beginning of the expression we still receive a compilation error. This is because the short is only being casted to years and not
+         * the entire expression. To fix this we need to wrap our expression in () and then cast the short to the ().
          *
          */
-        short numberOfPayments = (short) years * MONTHS_IN_YEARS;
+        short numberOfPayments = (short) (years * MONTHS_IN_YEARS);
         float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEARS;
 
         double mortgage = principal
