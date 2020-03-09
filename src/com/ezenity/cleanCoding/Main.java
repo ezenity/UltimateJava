@@ -6,12 +6,32 @@ import java.util.Scanner;
 
 /**
  * Clean Coding
- *
+ * <p>
  * "Any fool can write code that computers can understand. Good Programmers write code that humans can understand."
  * -Martin Fowler
- *
+ * <p>
  * This section is about how to make your code clean and readable for humans and not just computers. You will also learn
  * new techniques for changing the structure of the code and making it clean  and beautiful.
+ * <p>
+ * Summary
+ * <p>
+ * In this section you learned about clean coding and refactoring. Basically it is about changing the structure ofthe code without
+ * changing its behavior. For best practice, your methods, ideally, should between 5 - 10 lines of code and no more than 20. To do
+ * this look for repetitive patterns and highly related statements.
+ * <p>
+ * The Best Candidates for extracting
+ * <ul>
+ *     <li>
+ *         Keep your methods short
+ *     </li>
+ *     <li>
+ *         Extract repetitive patterns
+ *     </li>
+ *     <li>
+ *         Extract highly related statements
+ *     </li>
+ * </ul>
+ *
  */
 public class Main {
 
