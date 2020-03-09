@@ -236,8 +236,12 @@ public class Main {
     public static double calculateMortgage(int principal, float annualInterest, byte years){
         final byte MONTHS_IN_YEARS = 12; // Constant
         final byte PERCENT = 100; // Constant
-
-        float numberOfPayments = years * MONTHS_IN_YEARS;
+        /*
+         * Mosh noticed an error with creating the numberOfPayments. We do not need a float here and instead we could use a "short" type. However, we do receive an compilation error.
+         * Why, because by default the expression is an integer. To fix this issue, we need to cast the results to a "short"
+         *
+         */
+        short numberOfPayments = (short) years * MONTHS_IN_YEARS;
         float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEARS;
 
         double mortgage = principal
