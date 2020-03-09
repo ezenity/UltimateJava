@@ -43,6 +43,30 @@ public class Main {
          */
         String creatingMethodsMessage = greetUserValue("Anthony", "MacAllister");
         System.out.println(creatingMethodsMessage);
+        /*
+         * Refactoring
+         *
+         * Definition: Changing the structure of the code without changing its behavior.
+         *
+         * For this example Mosh used the Mortgage Calculator to display how you should refactor your code. With the previous implementation
+         * the Mortgage Calculator has about 44 lines of code. This is way too long. Typically, methods should only have about 5-10 lines of code
+         * and now more than 20.
+         *
+         * When refactoring code, you should look for two things. One is the concepts, or the lines of code that always go together. The second is
+         * what is repetitive in your code.
+         *
+         * Concept (Codes together)
+         *      The monthly interest, and the number of payments. It is being calculated for the mortgage, and it is currently being spread all over the place
+         *      even though it is being utilized for our mortgage variable. We want to bring these lines together in a separate method for calculating the mortgage.
+         *
+         * Repetitive Patterns
+         *      The while loops are being repeated. How you ask a question is very repetitive. You have the question, then read some value, then perform data
+         *      validation and if the data is invalid we type an error message. The only thing that is different is the question label, range of values, and
+         *      error message.
+         *
+         */
+        System.out.println();
+        System.out.println("=| Refactoring |=");
 
 
     }
