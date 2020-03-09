@@ -109,10 +109,8 @@ public class Main {
              */
             float annualInterest = scanner.nextFloat();
 
-            if (annualInterest >= 1 && annualInterest <= 30){
-                monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEARS;
+            if (annualInterest >= 1 && annualInterest <= 30)
                 break;
-            }
             /*
              * Avoid magic numbers when possible so that the next developer can understand what the variables are being used for.
              *
@@ -205,16 +203,28 @@ public class Main {
      * variable has a new compilation error "MONTHS_IN_YEARS". Since we defined this constant in our main method we also need to define it in our calculateMortgage method.
      *
      * We had two constants in our main method and since we use both of these constants in the calculation of our mortgage, we went ahead and moved both to this method.
+     *
+     * Now we only have one compilation error left, the monthlyInterest. So we went ahead and copied it from our main method and cleaned up the code for the validation statement.
+     *
+     * Once we have all the necessary code, we can return the calculation.
+     *
+     * Now if you look we have all the logic in one place. Previously it was spread all over the place in different loops inside the main method. We also could not reuse this logic.
+     * Now tomorrow if we made a new program and needed to calculate a mortgage we can do so without needing to cherry pick the line of code and paste them into that new program.
+     *
+     *
      */
     public static double calculateMortgage(int principal, float annualInterest, byte years){
         final byte MONTHS_IN_YEARS = 12; // Constant
         final byte PERCENT = 100; // Constant
 
         float numberOfPayments = years * MONTHS_IN_YEARS;
+        float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEARS;
 
         double mortgage = principal
                 * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
+
+        return mortgage;
     }
 
 }
