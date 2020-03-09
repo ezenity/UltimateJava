@@ -1,6 +1,7 @@
 package com.ezenity.cleanCoding;
 
 import java.text.NumberFormat;
+import java.time.Period;
 import java.util.Scanner;
 
 /**
@@ -75,87 +76,44 @@ public class Main {
          *
          *
          */
+//============================================================================================================================================================================================================
         /*
          * Project: Mortgage Calculator
+         *
+         * By us refactoring the Mortgage Calculator project, we only have 8 lines of code. This is what we call clean and beautiful code.
          */
         System.out.println();
         System.out.println();
         System.out.println("Project: Mortgage Calculator");
         /*
-         * We declared these variables so that it can be utilized outside the while loop blocks
+         * Now that we and no longer using while loops, we do not need these declarations and can be declared with the readNumber() method.
          */
-        int principal = 0;
-        float annualInterest = 0;
-        byte years = 0;
+        // int principal = 0;
+        // float annualInterest = 0;
+        // byte years = 0;
         /*
          * Now if you can see that the two variables below are greyed out and that is because they are no longer being used. Why, because we moved them to the calculateMortgage method
          * so, we can go and removed them but for a demo propose I will comment them out.
          */
         // float monthlyInterest = 0;
         // int numberOfPayments = 0;
-        Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            System.out.print("Principal ($1k - $1M): ");
-            /*
-             * We did not use "short" type because it has a max of 32k and that is not enough.
-             * If a person wanted to finance 1 million dollars this would be a problem. Since we used int
-             * we can store a value up to 2 billion.
-             */
-            principal = scanner.nextInt();
-            if (scanner.nextInt() >= 1_000 && scanner.nextInt() <= 1_000_000)
-                break;
-            System.out.println("Please enter an amount between $1k - $1M");
-        }
-
-        while (true) {
-            System.out.print("Annual Interest Rate: ");
-            /*
-             * For the interest rate we could use double or float however, since float uses less memory and is sufficient, it is the better option.
-             */
-            annualInterest = scanner.nextFloat();
-
-            if (annualInterest >= 1 && annualInterest <= 30)
-                break;
-            /*
-             * Avoid magic numbers when possible so that the next developer can understand what the variables are being used for.
-             *
-             * Magic numbers would be the 12 and 100 in the example below:
-             *      float monthlyInterest = annualInterest / 100 / 12;
-             */
-            System.out.println("Enter a value greater than 0 and less than 30");
-        }
-
-        while (true) {
-            System.out.print("Period (Years): ");
-            /*
-             * When it comes to how many years a mortgage can be obtained for, byte is the ideal option to use. Byte has a max of 127 which we will never reach will utilize a mortgage period.
-             */
-            years = scanner.nextByte();
-
-            if (years >= 1 && years <= 30)
-                break;
-            /*
-             * Pretty self-explanatory.
-             */
-            System.out.println("Enter a value between 1 and 30.");
-        }
+        /*
+         * Since this was being used in one of our while loops it is no longer need and can be removed. commenting out for demo purposes.
+         */
+        // Scanner scanner = new Scanner(System.in);
 
         /*
-         * Here we will use double since Float is not sufficient. The formal for the equation below is like so:
-         *               r(1 + r)n
-         *      M = P ----------------
-         *              (1 + r)n - 1
-         *
-         *
-         *                              monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments)
-         *      Mortgage = Principal ----------------------------------------------------------------------
-         *                                    Math.pow(1 + monthlyInterest, numberOfPayments) -1
-         *
-         * Keep in mind that this program is a simple example and does have a number of problems. The first problem would be input validation. To fix this problem you can use
-         * conditional statements to valid the value the user is inputting.
-         *
+         * Since this is returning a double, we need to cast an int and call it to the principal variable. We can also remove the "while loop" for principal.
          */
+        int principal = (int) readNumber("Principal",1_000,1_000_000);
+        /*
+         * Since this is returning a double, we need to cast a float and call it to the annualInterest variable. We can also remove the "while loop" for annual Interest Rate.
+         */
+        float annualInterest = (float) readNumber("Annual Interest Rate",1,30);
+        /*
+         * Since this is returning a double, we need to cast a byte and call it to the years variable. We can also remove the "while loop" for years.
+         */
+        byte years = (byte) readNumber("Period (Years)",1,30);
 
         /*
          * Extracting Methods
@@ -247,11 +205,60 @@ public class Main {
         short numberOfPayments = (short) (years * MONTHS_IN_YEARS);
         float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEARS;
 
+        /*
+         * Here we will use double since Float is not sufficient. The formal for the equation below is like so:
+         *               r(1 + r)n
+         *      M = P ----------------
+         *              (1 + r)n - 1
+         *
+         *
+         *                              monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments)
+         *      Mortgage = Principal ----------------------------------------------------------------------
+         *                                    Math.pow(1 + monthlyInterest, numberOfPayments) -1
+         *
+         * Keep in mind that this program is a simple example and does have a number of problems. The first problem would be input validation. To fix this problem you can use
+         * conditional statements to valid the value the user is inputting.
+         *
+         */
         double mortgage = principal
                 * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
 
         return mortgage;
+    }
+
+    /*
+     * Refactoring Repetitive Patterns
+     *
+     * Here we are going to remove the repetitive "while loop" patterns and move them into this new method. This will allow us to reuse this method three times. there is a tricky part
+     * because in each "while loop" we are reading different types of values. One way is to make different methods that's called "readByte()" "readFloat()" "readInt()" however, there
+     * is no point in doing this because we will still end up with three methods that almost looks identical. Another way is ti implement the method once and return a double. Why a
+     * double, because when ever we call that method, we can always cast a different type that we are requiring.
+     *
+     * Now we have all the required information for returning a value inside this method. We can reuse this in multiple places in our main method.
+     */
+    public static double readNumber(String prompt, double min, double max){
+        Scanner scanner = new Scanner(System.in);
+        double value;
+
+        while (true) {
+            System.out.print(prompt + ": ");
+            /*
+             * Since we do not know that exact the variable we need we want to work with a generic valuable. Why, because inside this method we don't know anything about
+             * mortgage calculation.
+             */
+            value = scanner.nextDouble();
+
+            if (value >= min && value <= max)
+                break;
+            /*
+             * here we added a generic error message based on the min and max values.
+             */
+            System.out.println("Enter a value between " + min + " and " + max);
+        }
+
+        return value;
+
     }
 
 }
