@@ -23,5 +23,16 @@ public class Main {
          *
          * Good source for finding out error information is Google.com & stackoverflow.com
          */
+        /*
+         * Common Syntax Errors
+         *      Forgetting to add the variable type
+         *      Not adding () for things such as println()
+         *      Adding the incorrect "" or ''
+         *      Incorrectly adding variable names and not properly adding the case-sensitive variables
+         *      Adding a name called class for a variable
+         *      Incorrectly using the comparing sign
+         *          Using = instead of ==
+         *              Equals       is Equal to
+         */
     }
 }
