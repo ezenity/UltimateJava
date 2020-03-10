@@ -34,5 +34,24 @@ public class Main {
          *          Using = instead of ==
          *              Equals       is Equal to
          */
+        /*
+         * Debugging Java Applications
+         *
+         * Here we will create a simple for loop to print out the listed numbers on the console. However, this program has a bug.
+         */
+        System.out.println("Start");
+        printNumbers(4);
+        System.out.println("Finish");
     }
+
+    /*
+     * Debugging Java Applications Sample
+     */
+    private static void printNumbers(int number) {
+        for (int i = 0; i <= number; i++){
+            System.out.println(i);
+        }
+    }
+
+
 }
