@@ -40,7 +40,8 @@ import java.util.Scanner;
  *             <li>While Loops</li>
  *             <li>Do While Loops</li>
  *             <li>For Each Loops</li>
- *         </ul>
+ *         </ul>npm audit fix
+ *
  *     </li>
  * </ul>
  * <p>
