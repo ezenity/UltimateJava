@@ -48,5 +48,17 @@ public class Main {
          *      Code Reuse
          *      Faster Development
          */
+        /*
+         * Course Structure
+         *
+         * Class
+         *      Building blocks of oop. We will also learn about the two first principles of oop (Encapsulation & Abstraction)
+         * Refactoring Towards Object-oriented Code
+         *      Critical to have as a Java developer
+         * Inheritance & Polymorphism
+         * Interfaces
+         *      Learning about coupling for dependency with classes and we'll look at problems with tightly coupling code.
+         *
+         */
     }
 }
