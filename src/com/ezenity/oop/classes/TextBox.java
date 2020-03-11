@@ -12,7 +12,8 @@ public class TextBox {
      * capitalized except the first word. Typically, when creating programs, we do not make field public but rather
      * private or protected.
      */
-    public String text; // field
+    // public String text; // field - Gives NPE when we do not setText()
+    public String text = ""; // field - This fixes the NPE inside the Main class
 
     /*
      * We use the "this" keyword when we have both the field and parameter named the same since it can be confusing. the
