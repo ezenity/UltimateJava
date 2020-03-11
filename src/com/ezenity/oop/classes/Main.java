@@ -123,6 +123,19 @@ public class Main {
 
         int wage = calculateWage(baseSalary,extraHours,hourly);
         System.out.println(wage);
+        /*
+         * Encapsulation
+         *
+         *      Definition: Bundle the data and methods that operate on the data in a single unit(class) or object(field).
+         */
+        System.out.println();
+        System.out.println("Encapsulation");
+        var employee = new Employee();
+        employee.baseSalary = 50_000;
+        employee.hourlyRate = 20;
+        int wageEncap = employee.calculateWage(10);
+        System.out.println(wageEncap);
+
 
     }
 
