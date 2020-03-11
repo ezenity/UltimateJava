@@ -37,5 +37,11 @@ public class Main {
          * FIELDS: text, limit, length, isFocused, isDisabled
          * METHODS: setText(), clear(), enable(), disable(), focus()
          */
+        /*
+         * Creating Classes
+         *
+         * When creating classes we use the pascal naming convention.
+         *      Every first letter of a word is capitalized.
+         */
     }
 }
