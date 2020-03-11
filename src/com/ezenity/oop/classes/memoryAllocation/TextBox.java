@@ -1,4 +1,4 @@
-package com.ezenity.oop.classes;
+package com.ezenity.oop.classes.memoryAllocation;
 
 /*
  * This class has a public access modifier. This means weather or not other classes in this project

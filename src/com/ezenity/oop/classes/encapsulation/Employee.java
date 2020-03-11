@@ -1,4 +1,4 @@
-package com.ezenity.oop.classes;
+package com.ezenity.oop.classes.encapsulation;
 
 public class Employee {
     public int baseSalary;
