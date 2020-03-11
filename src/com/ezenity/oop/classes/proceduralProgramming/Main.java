@@ -1,26 +1,14 @@
 package com.ezenity.oop.classes.proceduralProgramming;
 
 /**
- * Classes Intro
- * <ul>
- *     <li>Encapsulation</li>
- *     <li>Abstraction</li>
- *     <li>Constructors</li>
- *     <li>Getters / Setters</li>
- *     <li>Method Overloading</li>
- * </ul>
+ * Procedural Programming
+ * <p>
+ * The below example is what we call procedural programming, and it is not actually Object-oriented programming. Methods that typically
+ * have a lot of parameters are not Object-oriented programming. This makes reusability harder. It is harder to maintain this type of
+ * coding style and, you have to go all over the place and look at so much code to figure out what you need to change.
  */
 public class Main {
     public static void main(String[] args){
-        /*
-         * Procedural Programming
-         *
-         * The below example is what we call procedural programming, and it is not actually Object-oriented programming. Methods that typically
-         * have a lot of parameters are not Object-oriented programming. This makes reusability harder. It is harder to maintain this type of
-         * coding style and you have to go all over the place and look at so much code to figure out what you need to change.
-         *
-         *
-         */
         System.out.println();
         System.out.println("Procedural Programming");
         int baseSalary = 50_000;
@@ -33,7 +21,7 @@ public class Main {
 
     /**
      * Procedural Programming
-     *
+     * <p>
      * Gets the calculating for a wage
      *
      * @param baseSalary Get base salary

@@ -2,7 +2,7 @@ package com.ezenity.oop.classes.coupling;
 
 /**
  * Coupling
- *
+ * <p>
  * When we have multiple access modifiers that are public this makes our couple amount larger. Since we are not using the getter methods
  * we can go ahead and make them private. This reduces the coupling amount and makes an easier user interface.
  */

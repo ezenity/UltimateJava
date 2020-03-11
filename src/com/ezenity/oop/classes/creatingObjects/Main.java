@@ -1,30 +1,23 @@
 package com.ezenity.oop.classes.creatingObjects;
 
 /**
- * Classes Intro
+ * Creating Objects
+ * <p>
+ * Here we will create a TextBox variable and instantiate it with the TextBox() class. This means we are creating a
+ * new instance of this class. As you can see we have a repetitive TextBox keyword, and we can replace this with "var".
+ * The var keyword allows local variable type inference, this basically means we do not need to declare it (The Java compiler
+ * will detect the type of the variable based on what is instantiated. . This feature
+ * was added in Java 10.
  * <ul>
- *     <li>Encapsulation</li>
- *     <li>Abstraction</li>
- *     <li>Constructors</li>
- *     <li>Getters / Setters</li>
- *     <li>Method Overloading</li>
+ *     <li>Demo:</li>
+ *     <lu>
+ *         <li>TextBox textBox1 = new TextBox(); // old</li>
+ *         <li>var textBox1 = new TextBox(); // new</li>
+ *     </lu>
  * </ul>
  */
 public class Main {
     public static void main(String[] args){
-        /*
-         * Creating Objects
-         *
-         * Here we will create a TextBox variable and instantiate it with the TextBox() class. This means we are creating a
-         * new instance of this class. As you can see we have a repetitive TextBox keyword, and we can replace this with "var".
-         * The var keyword allows local variable type inference, this basically means we do not need to declare it (The Java compiler
-         * will detect the type of the variable based on what is instantiated. . This feature
-         * was added in Java 10.
-         * Demo:
-         *      TextBox textBox1 = new TextBox(); // old
-         *      var textBox1 = new TextBox(); // new
-         *
-         */
         System.out.println();
         System.out.println("Creating Objects");
         var textBox1 = new TextBox();

@@ -1,22 +1,16 @@
 package com.ezenity.oop.classes.encapsulation;
 
 /**
- * Classes Intro
- * <ul>
- *     <li>Encapsulation</li>
- *     <li>Abstraction</li>
- *     <li>Constructors</li>
- *     <li>Getters / Setters</li>
- *     <li>Method Overloading</li>
- * </ul>
+ * Encapsulation
+ * <p>
+ * Definition: Bundle the data and methods that operate on the data in a single unit(class) or object(field).
+ * <p>
+ * Mosh Definition: Encapsulation is the first principle of object-oriented programming.
+ *                  It suggests that we should bundle the data and operations on the data
+ *                  inside a single unit (class).
  */
 public class Main {
     public static void main(String[] args){
-        /*
-         * Encapsulation
-         *
-         *      Definition: Bundle the data and methods that operate on the data in a single unit(class) or object(field).
-         */
         System.out.println();
         System.out.println("Encapsulation");
         var employee = new Employee();

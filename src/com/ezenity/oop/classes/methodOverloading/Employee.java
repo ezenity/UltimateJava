@@ -2,7 +2,7 @@ package com.ezenity.oop.classes.methodOverloading;
 
 /**
  * Method Overloading
- *
+ * <p>
  * For the calculateWage() method we went ahead and duplicated it and removed the parameters along with the unused information. Then
  * we went ahead and overloaded the calculateWage() method to return and applied 0.
  */

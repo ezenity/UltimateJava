@@ -2,7 +2,7 @@ package com.ezenity.oop.classes.reducingCoupling;
 
 /**
  * Reducing Coupling
- *
+ * <p>
  * Since both "sendHttpRequest" & "findIpAddress" are detailed methods pertaining to this class we
  * went ahead and made the methods private. This makes the usage for this class cleaner and easier to utilize
  * with the interface.

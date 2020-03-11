@@ -1,9 +1,11 @@
 package com.ezenity.oop.classes.creatingClasses;
 
-/*
+/**
+ * Creating Classes
+ * <p>
  * This class has a public access modifier. This means weather or not other classes in this project
  * can access this class or not.
- *
+ * <p>
  * public basically means that it is visible in all other classes in this project.
  */
 public class TextBox {
@@ -15,7 +17,7 @@ public class TextBox {
     // public String text; // field - Gives NPE when we do not setText()
     public String text = ""; // field - This fixes the NPE inside the Main class
 
-    /*
+    /**
      * We use the "this" keyword when we have both the field and parameter named the same since it can be confusing. the
      * "this" keyword is a reference to the print object.
      */
@@ -23,7 +25,7 @@ public class TextBox {
        this.text = text;
     }
 
-    /*
+    /**
      * Here we don't need to use the "this" keyword since we have no paramters and the text keyword is pretty clear where it
      * is being used from.
      */

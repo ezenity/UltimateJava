@@ -2,18 +2,20 @@ package com.ezenity.oop.classes.staticMembers;
 
 /**
  * Static Members
- *
+ * <p>
  * After we declare our instance fields, we declare our static fields
- *
- * Note:
+ * <p>
+ * Note:<p>
  *  We can only access static methods of other static methods. For example, if we wanted
  *  to access he calculateWage() method inside our static printNumberOfEmployees() method
  *  we would need to create a new object first then call the method, like so:
- *
+ * <p>
+ * <code>
  *  public static void printNumberOfEmployees() {
  *      System.out.println(numberOfEmployees);
  *      new Employee().calculateWage();
  *  }
+ *  </code>
  */
 public class Employee {
     private int baseSalary;
