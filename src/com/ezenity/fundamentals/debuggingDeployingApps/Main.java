@@ -1,4 +1,4 @@
-package com.ezenity.debuggingDeployingApps;
+package com.ezenity.fundamentals.debuggingDeployingApps;
 
 /**
  * Debugging and Deploying Applications

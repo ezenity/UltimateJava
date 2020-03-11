@@ -1,7 +1,6 @@
-package com.ezenity.cleanCoding;
+package com.ezenity.fundamentals.cleanCoding;
 
 import java.text.NumberFormat;
-import java.time.Period;
 import java.util.Scanner;
 
 /**

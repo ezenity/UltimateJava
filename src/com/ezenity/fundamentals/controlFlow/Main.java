@@ -1,6 +1,5 @@
-package com.ezenity.controlFlow;
+package com.ezenity.fundamentals.controlFlow;
 
-import java.text.NumberFormat;
 import java.util.Scanner;
 
 /**
