@@ -23,55 +23,17 @@ package com.ezenity.oop.refactoringObjectOrientedDesign.theSolution;
  *      P: Number of Payments Made
  */
 public class Main {
-    final static byte MONTHS_IN_YEARS = 12;
-    final static byte PERCENT = 100;
 
     public static void main(String[] args){
         int principal = (int) Console.readNumber("Principal",1_000,1_000_000);
         float annualInterest = (float) Console.readNumber("Annual Interest Rate",1,30);
         byte years = (byte) Console.readNumber("Period (Years)",1,30);
 
-        MortgageReport.getMortgage(principal,annualInterest,years);
-        MortgageReport.getMortgagePayment(principal,annualInterest,years);
-    }
 
-    /**
-     * This method calculates the mortgage based off the given user inputs
-     *
-     * @param principal Get loan amount
-     * @param annualInterest Get loan interest rate
-     * @param years Get loan year length
-     * @return Return mortgage monthly payment amount
-     */
-    public static double calculateMortgage(int principal, float annualInterest, byte years){
-        short numberOfPayments = (short) (years * MONTHS_IN_YEARS);
-        float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEARS;
-
-        double mortgage = principal
-                * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
-                / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
-
-        return mortgage;
-    }
-
-    /**
-     * This method will calculate the mortgage balance
-     *
-     * @param principal Get loan amount
-     * @param annualInterest Get loan annual interest rate
-     * @param years Get loan year length
-     * @param mortgagePayments Get loan payment month
-     * @return Return mortgage balance
-     */
-    public static double calculateMortgageBalance(int principal, float annualInterest, byte years, short mortgagePayments){
-        short numberOfPayments = (short) (years * MONTHS_IN_YEARS);
-        float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEARS;
-
-        double mortgageBalance = principal
-                * ( (Math.pow(1 + monthlyInterest,numberOfPayments)) - (Math.pow(1 + monthlyInterest, mortgagePayments)) )
-                / (Math.pow(1 + monthlyInterest,numberOfPayments) - 1);
-
-        return mortgageBalance;
+        var calculator = new MortgageCalculator(principal, annualInterest, years);
+        var report = new MortgageReport(calculator);
+        report.getMortgage();
+        report.getMortgagePayment();
     }
 
 }
