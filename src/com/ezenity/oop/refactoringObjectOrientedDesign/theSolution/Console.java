@@ -2,7 +2,15 @@ package com.ezenity.oop.refactoringObjectOrientedDesign.theSolution;
 
 import java.util.Scanner;
 
+/**
+ * Since there is only going to be one console we have these methods as static.
+ */
 public class Console {
+    private static Scanner scanner = new Scanner(System.in);
+
+    public static double readNumber(String prompt){
+        return scanner.nextDouble();
+    }
     /**
      * This method is a generic while loop for gathering a min and max number with a custom string output
      *
@@ -12,7 +20,6 @@ public class Console {
      * @return Return user value input
      */
     public static double readNumber(String prompt, double min, double max){
-        Scanner scanner = new Scanner(System.in);
         double value;
 
         while (true) {
