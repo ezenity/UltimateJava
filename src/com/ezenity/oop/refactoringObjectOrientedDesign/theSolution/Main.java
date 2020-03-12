@@ -1,8 +1,6 @@
 package com.ezenity.oop.refactoringObjectOrientedDesign.theSolution;
 
 
-import java.text.NumberFormat;
-
 /**
  * Refactoring Towards an Object-oriented Design
  *
@@ -33,8 +31,8 @@ public class Main {
         float annualInterest = (float) Console.readNumber("Annual Interest Rate",1,30);
         byte years = (byte) Console.readNumber("Period (Years)",1,30);
 
-        getMortgage(principal,annualInterest,years);
-        getMortgagePayment(principal,annualInterest,years);
+        MortgageReport.getMortgage(principal,annualInterest,years);
+        MortgageReport.getMortgagePayment(principal,annualInterest,years);
     }
 
     /**
@@ -76,31 +74,4 @@ public class Main {
         return mortgageBalance;
     }
 
-    /**
-     * This method will convert the amount to currency and out the formatted value
-     *
-     * @param principal Get loan amount
-     * @param annualInterest  Get loan interest rate
-     * @param years Get loan year length
-     */
-    private static void getMortgage(int principal, float annualInterest, byte years){
-        double mortgage = calculateMortgage(principal, annualInterest, years);
-        String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
-        System.out.println("MORTGAGE\n---------" + mortgageFormatted);
-    }
-
-    /**
-     * This method will output the remaining balance for the given loan
-     *
-     * @param principal Get loan amount
-     * @param annualInterest Get loan interest rate
-     * @param years Get loan year length
-     */
-    private static void getMortgagePayment(int principal, float annualInterest, byte years){
-        System.out.println("\nPAYMENT SCHEDULE\n---------------");
-        for (short month = 1; month <= years * MONTHS_IN_YEARS; month++){
-            double mortgageBalance = calculateMortgageBalance(principal,annualInterest,years,month);
-            System.out.println(NumberFormat.getCurrencyInstance().format(mortgageBalance));
-        }
-    }
 }
