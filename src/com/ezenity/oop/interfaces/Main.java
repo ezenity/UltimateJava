@@ -23,6 +23,11 @@ package com.ezenity.oop.interfaces;
  *     <li>Why we need interfaces</li>
  *     <li>How to use interfaces "properly"</li>
  *     <li>Dependency Injection</li>
+ *     <lu>
+ *         <li>
+ *             Our classes should not instantiate their dependencies.
+ *         </li>
+ *     </lu>
  * </ul>
  */
 public class Main {
