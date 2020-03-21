@@ -55,6 +55,18 @@ public class Main {
         var textBoxControl = new TextBox();
         show(textBoxControl);
 
+        System.out.println();
+        var point1 = new Point(1,2);
+        var point2 = new Point(1,2);
+        /*
+         * This two outputs will return false because it is being based on their references. This is where
+         * we want to override the object class ( .equals() )
+         */
+        System.out.println(point1 == point2);
+        System.out.println(point1.equals(point2));
+        System.out.println(point1.hashCode());
+        System.out.println(point2.hashCode());
+
     }
 
     public static void show(UIControl uiControl){
