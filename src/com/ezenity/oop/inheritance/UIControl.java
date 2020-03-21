@@ -15,6 +15,10 @@ public class UIControl {
         System.out.println("UIControl");
     }
 
+    public void render() {
+
+    }
+
     /**
      * This method will set the isEnabled field to true.
      */

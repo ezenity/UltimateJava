@@ -67,6 +67,22 @@ public class Main {
         System.out.println(point1.hashCode());
         System.out.println(point2.hashCode());
 
+        System.out.println();
+        System.out.println();
+
+        UIControl[] controlsBox = {new TextBox(), new CheckBox(true)};
+        for (var control : controlsBox) {
+            /*
+             * Procedural way to solve this problem
+             *
+             * if control is TextBox
+             *      renderTextBox
+             * else if it is a CheckBox
+             *      renderCheckBox
+             */
+            control.render();
+        }
+
     }
 
     public static void show(UIControl uiControl){
