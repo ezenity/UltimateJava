@@ -34,6 +34,10 @@ import com.ezenity.oop.interfaces.injection.setter.TaxCalculator2019;
  *         </li>
  *     </lu>
  * </ul>
+ * <b>Interface Segregation Principle</b>
+ * <lu>
+ *     <li>Divide big interfaces into smaller ones</li>
+ * </lu>
  */
 public class Main {
 
