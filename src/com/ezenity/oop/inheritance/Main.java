@@ -27,6 +27,15 @@ package com.ezenity.oop.inheritance;
 public class Main {
 
     public static void main(String[] args) {
+        //var control = new UIControl();
+        //control.disabled();
+        //System.out.println(control.isEnabled());
 
+        var box1 = new TextBox();
+        var box2 = box1;
+        //System.out.println(box1.hashCode()); // Gets the has code for this object
+        //System.out.println(box2.hashCode());
+        box2.setText("Hello World");
+        System.out.println(box1);
     }
 }
