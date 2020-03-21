@@ -1,22 +1,13 @@
 package com.ezenity.oop.interfaces;
 
 /**
- * <b>Tightly-coupled Code example</b>
+ * <b>Creating an Interface</b>
  * <p>
- * If we add a new parameter to the constructor then all its dependency classes will give a compilation
- * error and will need modification
- * <p>
- * Let's say we wanted to change the percentage of the calculateTax() method, this will require all the
- * depended on classes to be recompiled.
+ * This interface will determine what will need to be done. The methods will not have any code but
+ * only declarations. Also, it is redundant to apply the public access modifier since each method
+ * declared here will need to be accessed by other methods, so we can remove the 'public' access
+ * modifier.
  */
-public class TaxCalculator {
-    private double taxableIncome;
-
-    public TaxCalculator(double taxableIncome) {
-        this.taxableIncome = taxableIncome;
-    }
-
-    public double calculateTax() {
-        return taxableIncome * 0.3;
-    }
+public interface TaxCalculator {
+    double calculateTax();
 }
