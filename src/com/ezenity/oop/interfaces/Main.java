@@ -1,5 +1,9 @@
 package com.ezenity.oop.interfaces;
 
+import com.ezenity.oop.interfaces.injection.constructor.TaxCalculator2018;
+import com.ezenity.oop.interfaces.injection.constructor.TaxReport;
+import com.ezenity.oop.interfaces.injection.setter.TaxCalculator2019;
+
 /**
  * Interfaces
  * <p>
@@ -40,7 +44,20 @@ public class Main {
          * ugly and hard to maintain. There is a framework that fixes this issue, and the
          * framework is called 'Spring'.
          */
-        var calculator = new TaxCalculator2018(100_000);
-        var report = new TaxReport(calculator);
+        var calculatorConstructor = new TaxCalculator2018(100_000);
+        var reportConstructor = new TaxReport(calculatorConstructor);
+
+
+        var calculatorSetter = new com.ezenity.oop.interfaces.injection.setter.TaxCalculator2018(100_000);
+        var reportSetter = new com.ezenity.oop.interfaces.injection.setter.TaxReport(calculatorSetter);
+        reportSetter.show();
+
+        /*
+         * This is an example of the setter injection. This is a more common approach to injecting using
+         * the setter feature.
+         */
+        reportSetter.setCalculator(new TaxCalculator2019());
+        reportSetter.show();
+
     }
 }

@@ -1,4 +1,4 @@
-package com.ezenity.oop.interfaces;
+package com.ezenity.oop.interfaces.injection.setter;
 
 /**
  * <b>Tightly-coupled Code example</b>

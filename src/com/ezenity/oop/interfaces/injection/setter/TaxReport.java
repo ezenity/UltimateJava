@@ -1,4 +1,4 @@
-package com.ezenity.oop.interfaces;
+package com.ezenity.oop.interfaces.injection.setter;
 
 /**
  * <b>Tightly-coupled Code example</b>
@@ -32,5 +32,15 @@ public class TaxReport {
     public void show() {
         var tax = calculator.calculateTax();
         System.out.println(tax);
+    }
+
+    /**
+     * This method is an example of the 'Setter Injection'. The benefit of this type of injection
+     * is that we can change the dependencies throughout the lifetime of our program.
+     *
+     * @param calculator
+     */
+    public void setCalculator(TaxCalculator calculator) {
+        this.calculator = calculator;
     }
 }
