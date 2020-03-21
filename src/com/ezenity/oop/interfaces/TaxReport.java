@@ -16,10 +16,17 @@ package com.ezenity.oop.interfaces;
  * </lu>
  */
 public class TaxReport {
-    private TaxCalculator2018 calculator;
+//    private TaxCalculator2018 calculator; // Concrete implementations of a calculator
+    private TaxCalculator calculator;
 
-    public TaxReport() {
-        calculator = new TaxCalculator2018(100_000);
+    /**
+     * This method is an example of 'constructor injection'.
+     *
+     * @param calculator
+     */
+    public TaxReport(TaxCalculator calculator) {
+//        calculator = new TaxCalculator2018(100_000);
+        this.calculator = calculator;
     }
 
     public void show() {

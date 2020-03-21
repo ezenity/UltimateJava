@@ -33,6 +33,14 @@ package com.ezenity.oop.interfaces;
 public class Main {
 
     public static void main(String[] args) {
-
+        /*
+         * This is what's called a 'Poor mans dependency injections'
+         *
+         * If we had say 1k classes with these types of injections, it'll make your program
+         * ugly and hard to maintain. There is a framework that fixes this issue, and the
+         * framework is called 'Spring'.
+         */
+        var calculator = new TaxCalculator2018(100_000);
+        var report = new TaxReport(calculator);
     }
 }
