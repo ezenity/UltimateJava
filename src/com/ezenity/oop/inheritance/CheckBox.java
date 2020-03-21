@@ -1,6 +1,10 @@
 package com.ezenity.oop.inheritance;
 
-public class CheckBox extends UIControl {
+/**
+ * Adding final to a class allows it to not be able to extended into other classes. Only a rare case when
+ * it is needed.
+ */
+public final class CheckBox extends UIControl {
 
     public CheckBox(boolean isEnabled) {
         super(isEnabled);

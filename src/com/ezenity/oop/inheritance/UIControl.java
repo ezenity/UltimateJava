@@ -19,8 +19,10 @@ public abstract class UIControl {
 
     /**
      * This method will set the isEnabled field to true.
+     *
+     * Adding a final to a method allows it not to be able inherited into other classes
      */
-    public void enabled() {
+    public final void enabled() {
         isEnabled = true;
     }
 
