@@ -2,7 +2,7 @@ package com.ezenity.oop.interfaces;
 
 /**
  * Interfaces
- *
+ * <p>
  * This section talks about:
  * <ul>
  *     <li>What interfaces are?</li>

@@ -2,9 +2,9 @@ package com.ezenity.oop.inheritance;
 
 /**
  * Base/Super/Parent Class
- *
+ * <p>
  * This class is an example of what we can have in our single class
- *
+ * <p>
  * The isEnabled field should be true by default because we always want our UIControls to be enabled.
  */
 public abstract class UIControl {

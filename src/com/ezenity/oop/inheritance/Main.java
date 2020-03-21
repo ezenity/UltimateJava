@@ -7,10 +7,10 @@ package com.ezenity.oop.inheritance;
  * <p>
  * This section will cover Constructors, Access Modifiers, Overriding Methods, Comparing Objects,
  * and Polymorphism.
- *
+ * <p>
  * We use inheritance where we want to consolidate reused code in one location. We will basically create
  * a single class that will have these behaviours where other classes will inherit these controls.
- *
+ * <p>
  * This single class can be called any of the following:
  * <lu>
  *     <li>Base</li>

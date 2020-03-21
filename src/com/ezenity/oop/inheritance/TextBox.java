@@ -3,7 +3,7 @@ package com.ezenity.oop.inheritance;
 /**
  * This class has a public access modifier. This means weather or not other classes in this project
  * can access this class or not.
- *
+ * <p>
  * public basically means that it is visible in all other classes in this project.
  */
 public class TextBox extends UIControl {
