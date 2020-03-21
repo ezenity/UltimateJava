@@ -2,6 +2,7 @@ package com.ezenity.oop.interfaces;
 
 import com.ezenity.oop.interfaces.injection.constructor.TaxCalculator2018;
 import com.ezenity.oop.interfaces.injection.constructor.TaxReport;
+import com.ezenity.oop.interfaces.injection.method.TaxCalculator;
 import com.ezenity.oop.interfaces.injection.setter.TaxCalculator2019;
 
 /**
@@ -38,6 +39,8 @@ public class Main {
 
     public static void main(String[] args) {
         /*
+         * CONSTRUCTOR INJECTION
+         *
          * This is what's called a 'Poor mans dependency injections'
          *
          * If we had say 1k classes with these types of injections, it'll make your program
@@ -48,6 +51,9 @@ public class Main {
         var reportConstructor = new TaxReport(calculatorConstructor);
 
 
+        /*
+         * SETTER INJECTION
+         */
         var calculatorSetter = new com.ezenity.oop.interfaces.injection.setter.TaxCalculator2018(100_000);
         var reportSetter = new com.ezenity.oop.interfaces.injection.setter.TaxReport(calculatorSetter);
         reportSetter.show();
@@ -58,6 +64,15 @@ public class Main {
          */
         reportSetter.setCalculator(new TaxCalculator2019());
         reportSetter.show();
+
+        /*
+         * METHOD INJECTION
+         */
+        var calculatorMethod = new com.ezenity.oop.interfaces.injection.method.TaxCalculator2018(100_000);
+        var reportMethod = new com.ezenity.oop.interfaces.injection.method.TaxReport();
+        reportMethod.show(calculatorMethod);
+        reportMethod.show(new com.ezenity.oop.interfaces.injection.method.TaxCalculator2019());
+
 
     }
 }
