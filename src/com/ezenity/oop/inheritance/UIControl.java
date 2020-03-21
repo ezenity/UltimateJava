@@ -7,7 +7,7 @@ package com.ezenity.oop.inheritance;
  *
  * The isEnabled field should be true by default because we always want our UIControls to be enabled.
  */
-public class UIControl {
+public abstract class UIControl {
     private boolean isEnabled = true;
 
     public UIControl(boolean isEnabled) {
@@ -15,9 +15,7 @@ public class UIControl {
         System.out.println("UIControl");
     }
 
-    public void render() {
-
-    }
+    public abstract void render();
 
     /**
      * This method will set the isEnabled field to true.
